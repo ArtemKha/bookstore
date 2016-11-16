@@ -223,7 +223,7 @@ DEPENDENCIES
   pg (= 0.18.1)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
-  rails_12factor
+  rails_12factor (~> 0.0.3)
   sass-rails (~> 5.0)
   simple_form (~> 3.3, >= 3.3.1)
   spring
