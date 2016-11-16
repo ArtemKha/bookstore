@@ -7,11 +7,18 @@
 	<div class = "row">
 		<% @books.each do |book| %>
 			<div class = "col-xs-6 col-md-4">
-				<a href="/books/<%= book.id %>">
-					<%= image_tag book.book_img.url(:book_index), class: "book" %>
-				</a>
-				<h5><%= link_to book.title, book_path(book) %></h5>
+				
+					<a href="/books/<%= book.id %>">
+						<%= image_tag book.book_img.url(:book_index), class: "book" %>
+					</a>
+					<h4 class="title-index"><%= link_to book.title, book_path(book) %></h4>
+				
 			</div>
 		<% end %>
 	</div>
+
 <% end %>
+
+
+	<div class="pagination"><h3><%= paginate @books %></h3></div>
+
