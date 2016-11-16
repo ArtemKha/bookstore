@@ -2,14 +2,12 @@
 	<div class="edit-book-form">
 		<h1> Edit Book </h1>
 
-		<%= simple_form_for @book, url: book_path, html: { :multipart => true } do |f| %>
+		<%= simple_form_for @book, html: { :multipart => true } do |f| %>
 			<%= f.input :title, label: "Book Title" %>
 			<%= f.input :author %>
 			<%= f.input :description %>
 			
-			<p>Add image:</p><%= f.file_field :book_img %>
-			<p>Add book:</p><%= f.file_field :book_file %>
-			</br>
+			<p>Add image:</p><%= f.file_field :book_img %>			
 			<%= f.button :submit, class: "btn-custom2" %>
 		<% end %>
 

@@ -33,8 +33,8 @@ class BooksController < ApplicationController
 		if @book.save
 			redirect_to root_path
 		else
-			render 'new' #- there are some errors
-			#redirect_to new_book_path
+			#render 'new' - there are some errors
+			redirect_to new_book_path
 		end
 	end
 
@@ -47,8 +47,8 @@ class BooksController < ApplicationController
 		if @book.update(book_params)
 			redirect_to root_path(@book)
 		else
-			render 'edit' #- there are some errors
-			#redirect_to edit_book_path(@book)
+			#render 'edit' - there are some errors
+			redirect_to edit_book_path(@book)
 		end
 	end
 	
@@ -64,7 +64,7 @@ class BooksController < ApplicationController
 	private
 
 		def book_params
-			params.require(:book).permit(:title, :description, :author, :category_id, :book_img, :book_file)
+			params.require(:book).permit(:title, :description, :author, :category_id, :book_img)
 		end
 	
 end
