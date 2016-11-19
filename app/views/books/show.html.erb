@@ -8,9 +8,6 @@
 			<h2 class="book-title"><%= @book.title %></h2>
 			<h3 class="book-author"> <span>by</span> <%= @book.author %></h3>
 
-			<!-- "It's developing yet - Avarege Rating of book" 
-			<h5 class="book-rating">Avarege Rating</h5> 
-						<div class="average-review-rating" data-score=<%= @average_review %>></div>-->
 			<p><%= @book.description %></p>
 
 			<%= link_to "Back", root_path, class: "btn btn-custom" %>
@@ -25,40 +22,3 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="col-md-4">			
-			<div class="reviews">
-				<!-- Add Rate here-->	
-				<h2>Reviews</h2>
-				<%= render @book.reviews %>
-
-				<div>
-				<%= link_to "Add Review", new_book_review_path(@book), class: "btn btn-custom" %>
-				</div>
-
-		</div>
-	</div>
-</div>
-
-
-<!-- script for show ReviewStars -->
-<script>
-	$('.review-rating').raty({
-		readOnly: true,
-		score: function() {
-			return $(this).attr('data-score');
-		},
-		path: '/assets/'
-	});
-</script>
-
-<!-- script for show ReviewStars -->
-<script>
-$('.avarage-review-rating').raty({
-	readOnly: true,
-	path: '/assets/',
-	score: function() {
-		return $(this).attr('data-score')
-	}
-});
-</script>

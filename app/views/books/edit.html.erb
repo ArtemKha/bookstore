@@ -2,7 +2,7 @@
 	<div class="edit-book-form">
 		<h1> Edit Book </h1>
 
-		<%= simple_form_for @book, html: { :multipart => true } do |f| %>
+		<%= simple_form_for @book do |f| %>
 			<%= f.input :title, label: "Book Title" %>
 			<%= f.input :author %>
 			<%= f.input :description %>
