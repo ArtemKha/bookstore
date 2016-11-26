@@ -19,7 +19,7 @@ class BooksController < ApplicationController
 		if @book.save
 			redirect_to root_path(@book)
 		else
-			render 'new'
+			render 'new'			
 		end
 	end
 

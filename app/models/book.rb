@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
 	belongs_to :user
 	
-	has_attached_file , styles: { book_index: "300x300>", book_show: "325x475>" }, default_url: "/images/:style/missing.png"
+	has_attached_file :book_img, styles: { book_index: "300x300>", book_show: "325x475>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :book_img, content_type: /\Aimage\/.*\z/
 
   validates :title, length: { in: 4..40 }
@@ -9,5 +9,4 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :book_img, presence: true
 
-#
 end
