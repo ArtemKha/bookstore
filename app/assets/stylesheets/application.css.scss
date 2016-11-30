@@ -114,6 +114,7 @@ p.alert, p.notice {
 	border: 1px solid #222;
 	padding: 8px 20px;
 	border-radius: 5px;
+	margin-top: 10px;
 	font-family: 'Ubuntu', sans-serif;
 	&:hover {
 		text-decoration: none;
@@ -336,3 +337,6 @@ a {
     color: black;
 }
 
+.flash-index {
+	text-align: center;
+}

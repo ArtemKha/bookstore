@@ -214,6 +214,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise (~> 4.2)
+  haml
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails

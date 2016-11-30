@@ -1,0 +1,12 @@
+%h2.current_category= params[:category]
+- if @books.count == 0
+  %h3 There are no books currently in this caregory
+- else
+  .row
+    - @books.each do |book|
+      .col-xs-6.col-md-4
+        %a{:href => "/books/#{book.id}"}
+          = image_tag book.book_img.url(:book_index), class: "book"
+        %h4.title-index= link_to book.title, book_path(book)
+.pagination
+  %h3= paginate @books

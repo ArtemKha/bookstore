@@ -1,8 +1,0 @@
-<%= simple_form_for @book do |f| %>
-	<%= f.input :title, label: "Book Title" %>
-	<%= f.input :author %>
-	<%= f.input :description %>
-	
-	<p>Add image:</p><%= f.file_field :book_img %>
-	<%= f.button :submit, class: "btn-custom2" %>
-<% end %>

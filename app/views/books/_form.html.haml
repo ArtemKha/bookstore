@@ -1,0 +1,9 @@
+= simple_form_for @book do |f|
+  = f.input :title, label: "Book Title"
+  = f.input :author
+  = f.input :description
+  %p Add image:
+  = f.file_field :book_img
+  %p Add file:
+  = f.file_field :book_file
+  = f.button :submit, class: "btn-custom2"

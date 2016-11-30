@@ -19,8 +19,9 @@ class BooksController < ApplicationController
 		if @book.save
 			redirect_to root_path(@book)
 		else
-			render 'new'			
-		end
+			flash[:notice] = @book.errors.empty? ? "Error" : @book.errors.full_messages.to_sentence
+			render 'new'
+			end
 	end
 
 	def edit
@@ -30,6 +31,7 @@ class BooksController < ApplicationController
 		if @book.update(book_params)
 			redirect_to root_path(@book)
 		else
+			flash[:notice] = @book.errors.empty? ? "Error" : @book.errors.full_messages.to_sentence
 			render 'edit'
 		end
 	end
@@ -46,7 +48,7 @@ class BooksController < ApplicationController
 	private
 
 		def book_params
-			params.require(:book).permit(:title, :description, :author, :book_img)
+			params.require(:book).permit(:title, :description, :author, :book_img, :book_file)
 		end
 	
 end

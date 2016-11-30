@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title BookStore
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %nav.navbar.navbar-default
+      .container
+        .navbar-header
+          = link_to "BookStore", root_path, class: "navbar-brand"
+        %ul.nav.navbar-nav
+          - if user_signed_in?
+            %li= link_to current_user.email, destroy_user_session_path, method: :delete, data: {confirm: "Are you really want to quit?"}
+          - else
+            %li= link_to "Sign Up", new_user_registration_path
+            %li= link_to "Log In", new_user_session_path
+        %ul.nav.navbar-nav.navbar-right
+          - if user_signed_in?
+            %li= link_to "Add Book", new_book_path
+    .container.flash-index
+      %p.notice= notice
+      %p.alert= alert
+    .container
+      = yield
