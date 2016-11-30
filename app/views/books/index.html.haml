@@ -1,6 +1,6 @@
 %h2.current_category= params[:category]
 - if @books.count == 0
-  %h3 There are no books currently in this caregory
+  %h3 There are no books currently
 - else
   .row
     - @books.each do |book|

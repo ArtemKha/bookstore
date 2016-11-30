@@ -19,7 +19,7 @@ class BooksController < ApplicationController
 		if @book.save
 			redirect_to root_path(@book)
 		else
-			flash[:notice] = @book.errors.empty? ? "Error" : @book.errors.full_messages.to_sentence
+			flash.now[:notice] = @book.errors.empty? ? "Error" : @book.errors.full_messages.to_sentence
 			render 'new'
 			end
 	end
@@ -31,7 +31,7 @@ class BooksController < ApplicationController
 		if @book.update(book_params)
 			redirect_to root_path(@book)
 		else
-			flash[:notice] = @book.errors.empty? ? "Error" : @book.errors.full_messages.to_sentence
+			flash.now[:notice] = @book.errors.empty? ? "Error" : @book.errors.full_messages.to_sentence
 			render 'edit'
 		end
 	end
