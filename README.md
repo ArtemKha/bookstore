@@ -1,24 +1,35 @@
-# README
+BookStore
+By Khasanov Artem
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Приложение “BookStore” реализовано согласно ниже изложенным спецификациям.
+Инструмент, который позволяет добавлять, редактировать и
+хранить список книг с помощью учетной записи Пользователя (требуется
+авторизация) и дает возможность скачивать электронной версии книги .
 
-Things you may want to cover:
+● Для Views необходимо использовать только Haml and Sass.
+● Пользователь должен иметь возможность авторизоваться с помощью gem ‘Devise’
+и его email должен показываться в шапке сайта. При клике на email должно
+появиться всплывающее окно (rails data-confirm window) с текстом “Вы
+действительно хотите выйти?” и при клике на кнопку “ОК” должен произойти logout
+из приложения.
+● Книги, которые добавил пользователь, должны иметь привязку к нему через связь
+belongs_to и has_many.
+● Для загрузки и хранения книг и изображений необходимо использовать gem
+“Paperclip”.
+● Необходимо использовать вложенные routes (пример: users/:id/books). На
+изображениях интерфейса указаны правильные маршруты. Чтобы получить такие
+маршруты используйте resources routes.
+● Для UI необходимо использовать Bootstrap (gem “bootstrap”). Будет плюсом, если
+интерфейс, который вы построите будет адекватно выглядеть на мобильных
+платформах.
+● Для книг необходима пагинация (gem “kaminari”) - выводить по 6 книг на одной
+странице.
+● Валидация при добавлении книг (4-40 letters title, 100-250 letters description,
+presence true - image and book). Ошибки валидации выводить с помощью rails flash.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Логика приложения Books Store:
+Для всех пользователей:
+● Возможность регистрации и входа в аккаунт
+● Возможность скачать общедоступную книгу
+Для авторов книг
+● Возможность добавить книгу к своему аккаунту

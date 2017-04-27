@@ -5,7 +5,7 @@ class Book < ApplicationRecord
   validates_attachment_content_type :book_img, content_type: /\Aimage\/.*\z/
 
   has_attached_file :book_file, url: "/:class/:attachment/:id/:basename.:extension", path: ":rails_root/public/:class/:attachment/:id/:basename.:extension"
-  validates_attachment :book_file, :content_type => { :content_type => "application/pdf" }
+  validates_attachment :book_file, :content_type => { :content_type => ["application/pdf","application/epub", "application/doc", "application/docx"] }
  
   validates :title, length: { in: 4..40 }
   validates :description, length: { in: 100..250 }

@@ -41,6 +41,14 @@ class BooksController < ApplicationController
 		redirect_to root_path
 	end
 
+	def secret_url    
+	  if @book.secret == params[:secret]
+	    @book = Book.find(params[:id])
+	  else
+	    redirect_to root_path
+	  end    
+	end
+
 	def find_book
 		@book = Book.find(params[:id])
 	end
