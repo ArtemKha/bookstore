@@ -1,35 +1,48 @@
-BookStore
-By Khasanov Artem
+Book Shop
+Author Hasanov Artem
 
-Приложение “BookStore” реализовано согласно ниже изложенным спецификациям.
-Инструмент, который позволяет добавлять, редактировать и
-хранить список книг с помощью учетной записи Пользователя (требуется
-авторизация) и дает возможность скачивать электронной версии книги .
+The "BookStore" application is implemented according to the following specifications.
+A tool that allows you to add, edit, and
+Store the list of books using the Account
+Authorization) and gives the possibility to download the electronic version of the book.
 
-● Для Views необходимо использовать только Haml and Sass.
-● Пользователь должен иметь возможность авторизоваться с помощью gem ‘Devise’
-и его email должен показываться в шапке сайта. При клике на email должно
-появиться всплывающее окно (rails data-confirm window) с текстом “Вы
-действительно хотите выйти?” и при клике на кнопку “ОК” должен произойти logout
-из приложения.
-● Книги, которые добавил пользователь, должны иметь привязку к нему через связь
-belongs_to и has_many.
-● Для загрузки и хранения книг и изображений необходимо использовать gem
-“Paperclip”.
-● Необходимо использовать вложенные routes (пример: users/:id/books). На
-изображениях интерфейса указаны правильные маршруты. Чтобы получить такие
-маршруты используйте resources routes.
-● Для UI необходимо использовать Bootstrap (gem “bootstrap”). Будет плюсом, если
-интерфейс, который вы построите будет адекватно выглядеть на мобильных
-платформах.
-● Для книг необходима пагинация (gem “kaminari”) - выводить по 6 книг на одной
-странице.
-● Валидация при добавлении книг (4-40 letters title, 100-250 letters description,
-presence true - image and book). Ошибки валидации выводить с помощью rails flash.
+● For views, use only Haml and Sass.
 
-Логика приложения Books Store:
-Для всех пользователей:
-● Возможность регистрации и входа в аккаунт
-● Возможность скачать общедоступную книгу
-Для авторов книг
-● Возможность добавить книгу к своему аккаунту
+● The user should be able to log in with gem 'Devise'
+
+And his email should be shown in the header of the site. When you click on an email, you must have
+A pop-up window will appear (the confirmation window for rails data) with the text "You
+Really want to get out? "And when you click on the" OK "button, you should logout
+From applications.
+
+● Books that have been added by the user must be linked to it via a link
+Belongs to and has_many.
+
+● To load and store books and images, you must use gem
+"Clip".
+
+● You must use nested routes (example: users /: id / books). On
+Images. To obtain such
+Connect resource resources.
+
+● For UI, you must use Bootstrap (gem "bootstrap"). It will be a plus if
+The interface that will build will adequately look on mobile
+Platform.
+
+● For books it is necessary to pagination (gem "kaminari") - to display 6 books on one
+page.
+
+● Validation when adding books (name 4-40 letters, description 100-250 letters,
+The presence of true - image and book). Output errors with the help of rails flash.
+
+Application logic Books Shop:
+
+For all users:
+
+● The ability to register and sign in to your account
+
+● Possibility to download a public book
+
+For authors of books
+
+● Ability to add a book to your account
