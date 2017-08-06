@@ -1,5 +1,5 @@
 Book Shop
-Author Hasanov Artem
+by Khasanov Artem
 
 The "BookStore" application is implemented according to the following specifications.
 A tool that allows you to add, edit, and
